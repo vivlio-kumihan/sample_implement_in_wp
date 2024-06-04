@@ -22,8 +22,11 @@
   transition: opacity 1s;
   opacity: 1;
 }
+
+// ローダーの解除ができない。
+// とりあえずこの値を1にして誤魔化す。
 #global-container {
-  opacity: 0;
+  opacity: 1;
 }
 
 .pace {

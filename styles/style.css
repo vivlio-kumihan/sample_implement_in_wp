@@ -4,7 +4,7 @@
 }
 
 #global-container {
-  opacity: 0;
+  opacity: 1;
 }
 
 .pace .pace-progress {
@@ -270,7 +270,7 @@
 }
 @media (min-width: 960px) {
   .swiper-slide {
-    box-shadow: 0 8px 40px -10px rgba(51, 51, 51, 0.8);
+    /* box-shadow: 0 8px 40px -10px rgba(51, 51, 51, 0.8); */
   }
 }
 .swiper-slide > img {
