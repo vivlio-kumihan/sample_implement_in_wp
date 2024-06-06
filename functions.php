@@ -12,8 +12,37 @@ function theme_slug_widgets_init()
 }
 add_action('widgets_init', 'theme_slug_widgets_init');
 
-// 投稿のサイドバーにアイキャッチ画像を付与。
+// 投稿のサイドバーにアイキャッチ画像を付与する機能を追加する。
 add_theme_support('post-thumbnails');
+
+// archive.phpを表示させるための設定
+// post_has_archive()関数の定義
+function post_has_archive($args, $post_type)
+{
+  if ('post' == $post_type) {
+    $args['rewrite'] = true;
+    // 任意のスラッグ名を登録←アーカイブページが有効になる。
+    $args['has_archive'] = 'archive';
+  }
+  return $args;
+}
+add_filter('register_post_type_args', 'post_has_archive', 10, 2);
+
+
+// カスタムフィルターで抜粋の文字数を変更
+function custom_excerpt_mblength($length) 
+{
+  return 50;
+}
+add_filter('excerpt_mblength', 'custom_excerpt_mblength');
+
+// 抜粋のmoreテキストを変更
+function custom_excerpt_more($more)
+{
+  return '...';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
+
 
 // CSSを読み込む
 function my_theme_enqueue_styles()
@@ -55,3 +84,19 @@ function my_theme_scripts()
 <?php
 }
 add_action('wp_head', 'my_theme_scripts');
+
+// // 【重要】
+// // 便利かもしれないが、スタイルはSCSSのBEMで管理したいのでこれは採用しない。
+// // body要素へbody_class();タグは必須。
+// // スラッグでクラス名を付けてくれる。
+// // ページを飛ぶたびにそのページのbody要素に
+// // スラッグ名をクラス名として付与してくれる便利機能。
+// add_filter('body_class', 'add_page_slug_class_name');
+// function add_page_slug_class_name($classes)
+// {
+//   if (is_page()) {
+//     $page = get_post(get_the_ID());
+//     $classes[] = $page->post_name;
+//   }
+//   return $classes;
+// }

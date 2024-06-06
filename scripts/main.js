@@ -160,6 +160,17 @@ elements.forEach(function(element) {
   }
 });
 
+const icons = document.querySelectorAll('.icon');
+icons.forEach(function(icon) {
+  if (icon.classList.contains('facebook')) {
+    icon.style.setProperty('--bg-image', `url(${templateUrl}/images/facebook.svg)`);
+  }
+  if (icon.classList.contains('twitter')) {
+    icon.style.setProperty('--bg-image', `url(${templateUrl}/images/twitter.svg)`);
+  }
+});
+
+
 
 // ///////////////////////////////////////////////////////////
 //

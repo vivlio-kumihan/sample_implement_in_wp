@@ -391,6 +391,27 @@
   }
 }
 
+
+// 画像のmixinが使えない。wpクソだ。
+// .icon {
+//   position: relative;
+//   &::before {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     left: -22px;
+//     width: 1em;
+//     height: 1em;
+//     content: '';
+//     color: $cBlack;
+//   }
+//   &.facebook::before {
+//   }
+//   &.twitter::before {
+//     @include bg($image: "<?php echo get_template_directory_uri(); ?>/images/twitter.svg");
+//   }
+// }
+
 .icon {
   position: relative;
   &::before {
@@ -402,15 +423,11 @@
     height: 1em;
     content: '';
     color: $cBlack;
-  }
-  &.facebook::before {
-    @include bg($image: ".<?php echo get_template_directory_uri(); ?>/images/facebook.svg");
-  }
-  &.twitter::before {
-    @include bg($image: ".<?php echo get_template_directory_uri(); ?>/images/twitter.svg");
+    background-image: var(--bg-image);
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
-
 
 .footer {
   @extend .content-width;

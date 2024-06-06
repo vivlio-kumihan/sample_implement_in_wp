@@ -1047,26 +1047,9 @@ a {
   height: 1em;
   content: "";
   color: black;
-}
-.icon.facebook::before {
-  background-color: #fff;
-  background-image: url(".<?php echo get_template_directory_uri(); ?>/images/facebook.svg");
-  background-size: cover;
-  background-position: center;
+  background-image: var(--bg-image);
+  background-size: contain;
   background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  color: inherit;
-}
-.icon.twitter::before {
-  background-color: #fff;
-  background-image: url(".<?php echo get_template_directory_uri(); ?>/images/twitter.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  color: inherit;
 }
 
 .footer {

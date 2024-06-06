@@ -46,6 +46,47 @@
       </div>
     </aside>
     <main>
+      <section class="latest-posts">
+        <h2>最新の投稿</h2>
+        <ul class="post-archive">
+          <?php
+          $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 3
+          );
+          $latest_posts = new WP_Query($args);
+          if ($latest_posts->have_posts()) : while ($latest_posts->have_posts()) : $latest_posts->the_post();
+          ?>
+              <li>
+                <a href="<?php the_permalink(); ?>">
+                  <div class="frame">
+                    <?php if (has_post_thumbnail()) {
+                      the_post_thumbnail('thumbnail'); // 必要に応じてサイズを変更
+                    } ?>
+                  </div>
+                  <div class="header-sub">
+                    <ul class="post-categorie">
+                      <?php
+                      $categories = get_the_category();
+                      foreach ($categories as $category) {
+                        echo '<li>' . esc_html($category->name) . '</li>';
+                      }
+                      ?>
+                    </ul>
+                    <time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                  </div>
+                  <h4 class="shrinkLine"><?php the_title(); ?></h4>
+                  <p><?php the_excerpt(); ?></p>
+                </a>
+              </li>
+            <?php endwhile;
+            wp_reset_postdata(); ?>
+          <?php else : ?>
+            <p><?php esc_html_e('投稿はまだありません。'); ?></p>
+          <?php endif; ?>
+        </ul>
+      </section>
+
       <section class="travel">
         <div class="travel__inner">
           <div class="travel__img cover-slide">
