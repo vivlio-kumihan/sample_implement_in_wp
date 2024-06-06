@@ -1,10 +1,11 @@
+/* Theme Name: implement in wp */
 .pace-done > #global-container {
   transition: opacity 1s;
   opacity: 1;
 }
 
 #global-container {
-  opacity: 1;
+  opacity: 0;
 }
 
 .pace .pace-progress {
@@ -270,7 +271,7 @@
 }
 @media (min-width: 960px) {
   .swiper-slide {
-    /* box-shadow: 0 8px 40px -10px rgba(51, 51, 51, 0.8); */
+    box-shadow: 0 8px 40px -10px rgba(51, 51, 51, 0.8);
   }
 }
 .swiper-slide > img {
@@ -488,29 +489,6 @@
 .bg-img-zoom {
   width: 100%;
   aspect-ratio: 2/1;
-  background-color: #fff;
-  background-image: url("../images/villa-1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  color: inherit;
-}
-.bg-img-zoom.two {
-  background-image: url("../images/villa-2.jpg");
-}
-.bg-img-zoom.three {
-  background-image: url("../images/villa-3.jpg");
-}
-.bg-img-zoom.four {
-  background-image: url("../images/villa-4.jpg");
-}
-.bg-img-zoom.five {
-  background-image: url("../images/villa-5.jpg");
-}
-.bg-img-zoom.six {
-  background-image: url("../images/villa-6.jpg");
 }
 
 .img-bg50::before {
@@ -1072,7 +1050,7 @@ a {
 }
 .icon.facebook::before {
   background-color: #fff;
-  background-image: url("../images/facebook.svg");
+  background-image: url(".<?php echo get_template_directory_uri(); ?>/images/facebook.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1082,7 +1060,7 @@ a {
 }
 .icon.twitter::before {
   background-color: #fff;
-  background-image: url("../images/twitter.svg");
+  background-image: url(".<?php echo get_template_directory_uri(); ?>/images/twitter.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1131,4 +1109,11 @@ a {
 .footer__nav > ul > li > a {
   color: black;
   text-transform: uppercase;
+}
+
+.information__head-line {
+  display: grid;
+  place-content: center;
+  padding-top: 100px;
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */

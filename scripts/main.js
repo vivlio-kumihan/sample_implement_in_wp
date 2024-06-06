@@ -12,6 +12,7 @@ class Main {
     // トリガーを初期化する。
     // ここで定義するということは、bindの対象だということ。
 
+    
     this.header = document.querySelector(".header");
     
     // テキスト・アニメーション用の小見出しを収集してアニメーション用にインスタンス化する。
@@ -138,6 +139,27 @@ class Main {
 }
 
 new Main;
+
+const elements = document.querySelectorAll('.bg-img-zoom');
+elements.forEach(function(element) {
+  element.style.backgroundImage = `url(${templateUrl}/images/villa-1.jpg)`;
+  if (element.classList.contains('two')) {
+      element.style.backgroundImage = `url(${templateUrl}/images/villa-2.jpg)`;
+  }
+  if (element.classList.contains('three')) {
+      element.style.backgroundImage = `url(${templateUrl}/images/villa-3.jpg)`;
+  }
+  if (element.classList.contains('four')) {
+      element.style.backgroundImage = `url(${templateUrl}/images/villa-4.jpg)`;
+  }
+  if (element.classList.contains('five')) {
+      element.style.backgroundImage = `url(${templateUrl}/images/villa-5.jpg)`;
+  }
+  if (element.classList.contains('six')) {
+      element.style.backgroundImage = `url(${templateUrl}/images/villa-6.jpg)`;
+  }
+});
+
 
 // ///////////////////////////////////////////////////////////
 //

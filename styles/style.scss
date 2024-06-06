@@ -1,3 +1,5 @@
+/* Theme Name: implement in wp */
+
 @use 'parts/loadder'; // loadding アニメーション
 @use 'parts/appear'; // appearアニメーション
 @use 'parts/button'; // buttonアニメーション
@@ -7,3 +9,4 @@
 @use 'parts/mobile-menu'; // モバイルメニュー
 
 @use "pages/home"; // トップ画面スタイル（ページ毎に作成）
+@use "pages/information"; // トップ画面スタイル（ページ毎に作成）

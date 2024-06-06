@@ -109,23 +109,23 @@
 .bg-img-zoom {
   width: 100%;
   aspect-ratio: 2/1;
-  @include bg($image: '../images/villa-1.jpg');
+  // @include bg($image: "<?php echo get_template_directory_uri(); ?>/images/villa-1.jpg");
   @extend .img-zoom;
-  &.two {
-    background-image: url('../images/villa-2.jpg');
-  }
-  &.three {
-    background-image: url('../images/villa-3.jpg');
-  }
-  &.four {
-    background-image: url('../images/villa-4.jpg');
-  }
-  &.five {
-    background-image: url('../images/villa-5.jpg');
-  }
-  &.six {
-    background-image: url('../images/villa-6.jpg');
-  }
+  // &.two {
+  //   background-image: url("<?php echo get_template_directory_uri(); ?>/images/villa-2.jpg");
+  // }
+  // &.three {
+  //   background-image: url("<?php echo get_template_directory_uri(); ?>/images/villa-3.jpg");
+  // }
+  // &.four {
+  //   background-image: url("<?php echo get_template_directory_uri(); ?>/images/villa-4.jpg");
+  // }
+  // &.five {
+  //   background-image: url("<?php echo get_template_directory_uri(); ?>/images/villa-5.jpg");
+  // }
+  // &.six {
+  //   background-image: url("<?php echo get_template_directory_uri(); ?>/images/villa-6.jpg");
+  // }
 }
 
 .img-bg50 {

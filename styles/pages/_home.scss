@@ -404,10 +404,10 @@
     color: $cBlack;
   }
   &.facebook::before {
-    @include bg($image: "../images/facebook.svg");
+    @include bg($image: ".<?php echo get_template_directory_uri(); ?>/images/facebook.svg");
   }
   &.twitter::before {
-    @include bg($image: "../images/twitter.svg");
+    @include bg($image: ".<?php echo get_template_directory_uri(); ?>/images/twitter.svg");
   }
 }
 
